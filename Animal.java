@@ -1,6 +1,7 @@
-/* TODO: Create the Animal class */
 
-/* TODO: Create the Animal(String, int1, int2) constructor */
-// Initializes CellItem 'name' with String argument
-// Intiializes CellItem 'cost' as int * int2
-//
+public class Animal extends CellItem{
+
+  public Animal(String name, int int1, int int2){
+    super(name, int1 * int2);
+  }    
+}

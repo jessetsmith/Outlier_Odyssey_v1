@@ -104,7 +104,7 @@ public class Tests {
         } else {
             System.out.println("Left error: nextCell is not updated correctly for valid move.");
         }
-        
+
         refresh(nextCell);
         System.out.println();
 
@@ -122,7 +122,7 @@ public class Tests {
         } else {
             System.out.println("Down error: nextCell is not updated correctly for valid move.");
         }
-        
+
         refresh(nextCell);
         System.out.println();
 
@@ -140,8 +140,8 @@ public class Tests {
         } else {
             System.out.println("Right error: nextCell is not updated correctly for valid move.");
         }
-        
-        
+
+
     }
 
     public static void refresh(int[] nextCell) {

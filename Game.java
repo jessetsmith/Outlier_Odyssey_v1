@@ -33,12 +33,14 @@ public class Game {
      */
 
     public void runGame(Scanner input) {
-
+        HandleStart();
         while ((player.getHealth() != 0) && (player.getPosition() != board.getExitCell())) {
-            
+
             Cell nextCell;
             char mov;
 
+
+            System.out.println();
             // Print current game state
             board.displayBoard(player);
             System.out.println("\nHealth: " + player.getHealth() + "\n");
@@ -49,7 +51,7 @@ public class Game {
                 System.out.println("Enter a direction you want to move!");
                 System.out.print("Up, down, left, or right? ");
                 mov = input.nextLine().toLowerCase().charAt(0);
-                
+
                 // Assess move validity
                 nextCell = validMove(mov);
                 if (nextCell == null)
@@ -64,12 +66,12 @@ public class Game {
 
         if (player.getPosition() == board.getExitCell()) { // reached exit
             board.displayBoard(player);
-            System.out.println("You got to the end! You win!");
+            System.out.println("\n" + "You got to the end! You win!");
         } else {
             board.displayBoard(player);
-            System.out.println("Sorry, you have no more health. Game over!");
-        }
-
+            System.out.println("\n" + "Sorry, you have no more health. Game over!");
+        } 
+      HandleEnd();
     }
 
     /**
@@ -137,7 +139,8 @@ public class Game {
         }
 
         System.out.print("Would you like to move there? Yes or no: ");
-        char confirm = input.nextLine().toLowerCase().charAt(0);
+
+      char confirm = input.nextLine().toLowerCase().charAt(0);
 
         if (confirm == 'y') { // If player wants to move
             this.player.setPosition(nextCell.getID());
@@ -146,8 +149,28 @@ public class Game {
             if (player.getHealth() < 0) {
                 player.setHealth(0);
             }
-
         }
 
     }
+  public static void HandleStart(){
+    System.out.print(
+    "____________________________________________________________"+"\n" +
+    " _____     _   _ _            _____   _                     "+"\n" +
+    "|     |_ _| |_| |_|___ ___   |     |_| |_ _ ___ ___ ___ _ _ "+"\n" +
+    "|  |  | | |  _| | | -_|  _|  |  |  | . | | |_ -|_ -| -_| | |"+"\n" +
+    "|_____|___|_| |_|_|___|_|    |_____|___|_  |___|___|___|_  |"+"\n" +
+    "                                       |___|           |___|"+"\n" +
+    "____________________________________________________________"+"\n");
+  }
+
+    public static void HandleEnd(){
+    System.out.print(
+    "____________________________________________"+"\n" +
+    " _____                  _____             " +"\n" +
+    "|   __|___ _____ ___   |     |_ _ ___ ___ "+"\n" +
+    "|  |  | .'|     | -_|  |  |  | | | -_|  _|"+"\n" +
+    "|_____|__,|_|_|_|___|  |_____||_||___|_|"+"\n"+
+    "____________________________________________"+"\n"+"\n");
+  }
 }
+

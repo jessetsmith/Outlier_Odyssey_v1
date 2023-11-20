@@ -37,37 +37,63 @@ public class Cell {
      * @return an Animal object
      */
     private Animal initAnimal(int randNum) {
-        /* TODO: return a new Animal instance using Animal(String, int1, int2) */
             // int2 is the id of the Cell
             // If randNum is 0, String is "Wolf" and int1 is -2
             // If randNum is 1, String is "Boar" and int1 is -1
             // If randNum is 2, String is "Elk" and int1 is 0
             // If randNum is 3 or 4, String is "Hare" and int1 is 1
-
+      if(randNum == 0){
+        Animal newAnimal = new Animal("Wolf", -2, this.id);
+        return newAnimal;
+      }else if(randNum == 1){
+        Animal newAnimal = new Animal("Boar", -1, this.id);
+        return newAnimal;
+      }else if(randNum == 2){
+        Animal newAnimal = new Animal("Elk", 0, this.id);
+        return newAnimal;
+      }else if(randNum == 3 || randNum == 4){
+        Animal newAnimal = new Animal("Hare", 1, this.id);
+        return newAnimal;
+      }else {
+        return null;
+      } 
     }
 
+    public CellItem getCellItem(){
+      return cellItem;
+    }
 
+    public int getID(){
+      return id;
+    }
 
+    public boolean getCleared(){
+      return cleared;
+    }
 
-    /* TODO: Add getter methods: */
-        // cellItem getter
-        // id getter
-        // cleared getter
-        // visited getter
-        // cellCost getter
-            // If a cell has been visited, the cellCost getter returns 0
-    
+    public boolean getVisited(){
+      return visited;
+    }
 
+    public int getCellCost(){
+      if(visited){
+        return 0;
+      }else{
+        return cellItem.getCost();
+      }
+    }
 
-            
-    /* TODO: Add getter methods: */
-        // cellItem setter
-        // cleared setter
-        // visited setter
+  public void setCellItem(CellItem cellItem){
+    this.cellItem = cellItem; 
+  }
 
+  public void setCleared(boolean cleared){
+    this.cleared = cleared; 
+  }
 
-
-
+  public void setVisited(boolean visited){
+    this.visited = visited; 
+  }
     /**
      * Overriding toString() method that returns:
      *     " X " if Cell has been cleared and visited
@@ -84,7 +110,6 @@ public class Cell {
                 return " X ";
             } else
                 return " " + this.cellItem.toString().charAt(0) + " ";
-
         } else
             return "   ";
 
@@ -96,12 +121,10 @@ public class Cell {
      * @param other the other cell to compare to this
      * @return true if same, false otherwise.
      */
-    @Override
-    /* TODO: declare equals() method */ {
-
-        // TODO: return true if cells have the same id
-        // Otherwise, return false
-
+    @Override 
+    public boolean equals(Object other){
+      Cell otherCell = (Cell)other;  
+      return this.id == otherCell.id;      
     }
 
 }

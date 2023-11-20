@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OutlierOdyssey {
+public class Outlierodyssey {
 
     public static void main(String[] args) {
         // Scanner incantation to initialize game

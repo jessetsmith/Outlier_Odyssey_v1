@@ -23,12 +23,12 @@ public class GameBoard {
      */
 
     public GameBoard(int rows, int cols) {
-
-        /* TODO: complete constructor */
-            // Initialize 'rows' and 'cols'
-            // Initialize 'board' to a new 2D Cell array with 'rows' rows and 'cols' columns
-            // Run initBoard(), initCell0(), and initGemCell()
-
+      this.rows = rows;
+      this.cols = cols; 
+      board = new Cell[rows][cols];
+      initBoard();
+      initCell0();
+      initGemCell();
     }
 
     /**
@@ -36,11 +36,12 @@ public class GameBoard {
      * and increments the exitCell attribute
      */
     private void initBoard() {
-
-        /* TODO: Initialize the board */
-            // Initialize every element to a new Cell object with the no-argument constructor
-            // For every new element, increment exitCell
-
+      for(int r = 0; r < board.length; r++){
+        for(int c = 0; c < board[r].length; c++){
+          board[r][c] = new Cell();
+          exitCell++;
+        }
+      }      
     }
 
     /**
@@ -49,7 +50,6 @@ public class GameBoard {
     private void initCell0() {
         board[0][0].setCleared(true);
         board[0][0].setVisited(true);
-
     }
 
     /**
@@ -69,7 +69,6 @@ public class GameBoard {
             board[randI][randJ].setCellItem(c);
 
         } while ((randI == 0 && randJ == 0) || ((randI == (board.length - 1) && randJ == (board[0].length - 1))));
-
     }
 
     /**
@@ -107,9 +106,7 @@ public class GameBoard {
                 }
             }
         }
-
         return coord;
-
     }
 
     /**
@@ -128,12 +125,8 @@ public class GameBoard {
                     System.out.print("|");
                     System.out.print(board[i][j]);
                 }
-
             }
             System.out.println("|");
-
         }
-
     }
-
 }
