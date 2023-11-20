@@ -1,4 +1,4 @@
-![OutlierOdysseyCover](https://drive.google.com/file/d/1x-QEESxJDa5_gVZaLJbFDSvTK29Fl35C/view?usp=sharing)
+![OutlierOdysseyCover](OutlierOdyssey_Cover.png)
 
 A simple console game with multiple parts written in Java. 
 
