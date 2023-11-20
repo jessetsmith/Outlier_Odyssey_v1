@@ -1,4 +1,4 @@
-![OutlierOdysseyCover](https://replit.com/@jessetsmith/Outlier-Odyssey#OutlierOdyssey%20-%20Cover.png)
+![OutlierOdysseyCover](https://drive.google.com/file/d/1x-QEESxJDa5_gVZaLJbFDSvTK29Fl35C/view?usp=sharing)
 
 A simple console game with multiple parts written in Java. 
 
