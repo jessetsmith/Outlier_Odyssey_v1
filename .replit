@@ -1,6 +1,6 @@
 compile = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')"
 run = "java -classpath .:target/dependency/* Outlierodyssey"
-entrypoint = "Main.java"
+entrypoint = "Outlierodyssey.java"
 hidden = ["**/*.class"]
 
 [packager]
